@@ -1,0 +1,59 @@
+<div class="col-sm-offset-2 col-sm-10">
+  <div id="div1">
+    <h1 id="hideShow">New Company</h1>
+    <div id="company-form">
+      <%= form_for (@company) , :html => { :multipart => true },:class=>"form-horizontal " , :remote => true do |f| %>
+        <div class="form-group has-warning">
+          <label class="control-label form-horizontal " for="inputWarning1"  >Company Name</label>
+          <%= f.text_field :name %>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="inputWarning1 " >Company Location</label>
+          <%= f.text_field :location %>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label image" for="inputWarning1">Image attached</label>
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="form-group has-warning">
+          <%= f.submit "Sign Up", :class => 'submit' %>
+        </div>
+      <% end %>
+    </div> 
+    <label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox1" value="option1"> checkbox 1
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox2" value="option2"> checkbox 2
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox3" value="option3"> checkbox 3
+    </label><br>
+    <label class="radio-inline">
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> radio1
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> radio 2
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> radio 3
+    </label><br><br>
+    <select id="country">
+      <option value="None">-- Select --</option>
+      <option value="China">China</option>
+      <option value="United State">United State</option>
+      <option value="Malaysia">Malaysia</option>
+      <option value="India">India</option>
+    </select><br><br>
+    <input type='button' value='Display Selected' id='isSelect'>
+    <input type='button' value='Select China' id='selectChina'>
+    <input type='button' value='Select India' id='selectIndia'>
+    <input type='button' value='Select US' id='selectUS'>
+    <input type='button' value='Select Malaysia' id='selectMalaysia'><br><br>
+  </div>
+  <button id="removeDemo">Remove div element</button>  
+  <button>Hide/Show</button> 
+  <br><br>
+  <%= link_to 'Back', root_path, :class=>"btn btn-primary btn-lg active" %>
+</div>
+</div>

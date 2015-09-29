@@ -1,0 +1,59 @@
+<div class="container">
+	<% if user_signed_in? %>
+	  <div class="well"> 
+			<h2>Welcome</h2>
+		 	<h3><B><%= current_user.email %></B></h3> 
+	  </div>
+	  <table class="table table-bordered table-striped">
+	    <thead>
+	      <tr>
+	        <th colspan="5" style="text-align:center">Actions</th>
+	      </tr>
+	    </thead>
+	    <tbody class="welcome-index">
+	    	<tr>
+			    <td>
+			    	<%= link_to "Logout", destroy_user_session_path,:method=>"get", :class=>"btn btn-primary"%> 
+			    </td> 
+			    <td>
+						<%= link_to "Edit Profile", edit_user_registration_path,:method=>"get", :class=>"btn btn-primary"%>
+					</td> 
+			    <td>	
+						<%= link_to "Add New Company" , new_company_path, :class=>"btn btn-primary" %>  
+					</td> 
+			    <td>	
+						<%= link_to "Post Blog" , posts_path, :class=>"btn btn-primary" %>  
+					</td> 
+			    <td>	
+						<%= link_to 'Company Blog', companies_path, :class=>"btn btn-primary" %>
+					</td>
+				</tr>
+			</tbody>
+		</table>		
+	<%else%>
+		<div class="well"> 
+			<%= link_to "Sign Up", new_user_registration_path, :class=>"btn btn-primary"%> 
+	  </div>
+		<table class="table table-bordered table-striped">
+	    <thead>
+	      <tr>
+	        <th colspan="3" style="text-align:center">Actions</th>
+	      </tr>
+	    </thead>
+	    <tbody class="welcome-index">
+	    	<tr>
+					<td>
+						<%= link_to "Login", user_session_path, :class=>"btn btn-primary"%> 
+					</td> 
+			    <td>	
+						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class=>"btn btn-primary" %>
+					</td> 
+			    <td>	
+						<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class=>"btn btn-primary" %>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	<% end %>	
+</div>
+ 

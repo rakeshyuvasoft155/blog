@@ -1,0 +1,28 @@
+<div class="col-sm-offset-2 col-sm-10">
+  <div id="div1">
+    <h1 id="hideShow">New Company</h1>
+    <div id="company-form">
+      <%= form_for (@company) , :html => { :multipart => true },:class=>"form-horizontal " , :remote => true do |f| %>
+        <div class="form-group has-warning">
+          <label class="control-label form-horizontal " for="inputWarning1"  >Company Name</label>
+          <%= f.text_field :name %>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="inputWarning1 " >Company Location</label>
+          <%= f.text_field :location %>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label image" for="inputWarning1">Image attached</label>
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="form-group has-warning submit">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>  
+  </div>
+  <div class="show_company"> 
+  
+  </div>
+  <%= link_to 'Back', root_path, :class=>"btn btn-primary btn-lg active" %>
+</div>

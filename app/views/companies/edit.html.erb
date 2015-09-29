@@ -1,0 +1,21 @@
+<div class="col-sm-offset-2 col-sm-10">
+  <h1>Editing company</h1>
+  <%= form_for (@company) , :html => { :multipart => true },:class=>"form-horizontal" do |f| %>
+    <div class="form-group has-warning">
+      <label class="control-label form-horizontal" for="inputWarning1" >Company Name</label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group has-warning">
+      <label class="control-label" for="inputWarning1">Company Location</label>
+      <%= f.text_field :location %>
+    </div>
+    <div class="form-group has-warning">
+      <label class="control-label" for="inputWarning1">Image attached</label>
+      <%= f.file_field :avatar %>
+    </div>
+      <div class="form-group has-warning ">
+      <%= f.submit "Edit" %>
+    </div>
+  <% end %><br />
+  <%= link_to 'Back', companies_path, :class=>"btn btn-primary btn-lg active" %>
+</div>

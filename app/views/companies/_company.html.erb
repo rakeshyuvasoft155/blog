@@ -1,0 +1,11 @@
+
+  <tr > 
+    <td><%= company.name %></td>
+    <td id="mouseleaveDemo"><%= company.location %></td>
+    <td id="hoverDemo"><%= image_tag company.avatar.url(:medium) %></td>
+
+    <td><%= link_to 'Show', company_path(company), :class=>"btn btn-primary btn-lg active" %></td>
+    <td><button class ="ajax-edit btn btn-primary btn-lg active" value="<%= company.id %>">ajax-edit </button></td>
+    <td><button class ="ajax-delete btn btn-primary btn-lg active" value="<%= company.id %>">ajax-delete </button></td>
+  </tr>
+

@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.body %></td>
+    <td><button class ="edit-post btn btn-default" value="<%= post.id %>">Edit </button></td>
+    <td><%= link_to "Delete", post_delete_path(post), remote: true, class: "btn btn-danger" %></td>
+  </tr>
+<% end %>
+   
