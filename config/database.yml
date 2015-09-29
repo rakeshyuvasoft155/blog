@@ -4,14 +4,14 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password:
-  host: localhost
-  socket: /opt/lampp/var/mysql/mysql.sock
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   username: root
+#   password:
+#   host: localhost
+#   socket: /opt/lampp/var/mysql/mysql.sock
 
 
 
@@ -19,6 +19,13 @@ default: &default
 development:
   <<: *default
   database: demo_seed
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
